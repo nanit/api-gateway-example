@@ -18,7 +18,7 @@ Running The Test
 
 Just clone this repository and run
 ```bash
-make test
+$ make test
 ```
 
 in the root folder.
