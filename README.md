@@ -28,4 +28,3 @@ All tests should pass which means that:
    with the /login path
 2. A request to http://api.mycompany.com/messages is routed to the inbox
    service with the /messages path
-

@@ -15,5 +15,3 @@ testapp:
   build: spec/app
   links: 
     - gateway
-  labels:
-    test_id: "${JENKINS_TEST_ID}"
