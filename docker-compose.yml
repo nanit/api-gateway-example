@@ -1,0 +1,19 @@
+authentication:
+  build: spec/dummy_service
+inbox:
+  build: spec/dummy_service
+
+gateway:
+  build: app
+  links:
+    - authentication
+    - inbox
+  ports:
+    - 80
+
+testapp:
+  build: spec/app
+  links: 
+    - gateway
+  labels:
+    test_id: "${JENKINS_TEST_ID}"
