@@ -18,12 +18,16 @@ All conf files are loaded to the main nginx.conf.
 Running The Test
 ----------------
 
-Just clone this repository and run
-```bash
-$ make test
-```
+1. Make sure docker and docker-compose are installed on your machine.
 
-in the root folder.
+2.
+```bash
+$ git clone git@github.com:nanit/api-gateway-example.git
+```
+3.
+```bash
+cd api-gateway-example && make test
+```
 
 All tests should pass which means that:
 
