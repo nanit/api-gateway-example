@@ -13,10 +13,6 @@ specified path.
 For example, you can verify that an HTTP call to http://api.mycompany.com/login is
 routed to your authentication service with the /login path.
 
-Each service states its routes in `app/services/service_name.conf`
-
-All conf files are loaded to the main nginx.conf.
-
 Running The Test
 ----------------
 
@@ -41,6 +37,21 @@ All tests should pass which means that:
 2. A request to http://your.gateway.com/messages is routed to the inbox
    service with the /messages path
 
+Project Structure
+-----------------
+
+1. [spec/app/spec/expected_routes.yml](https://github.com/nanit/api-gateway-example/blob/master/spec/app/spec/expected_routes.yml) - the route specs. Each route has an expected destination service name and an expected destination path.
+
+2. `app/services/<service_name>.conf` - per-service routes configuration.
+
+3. [app/nginx.conf](https://github.com/nanit/api-gateway-example/blob/master/app/nginx.conf) - the main nginx configuration file.
+
+4. [docker-compose.yml](https://github.com/nanit/api-gateway-example/blob/master/docker-compose.yml) - add new services here.
+
+You should only change these 4 to fit your specific needs. The rest of the
+files may remain untouched.
+
+
 Adding a New Route
 ------------------
 
@@ -51,3 +62,18 @@ Adding a New Route
 3. Add the proper NGINX configuration.
 
 4. Run `make test` again in the root directory and (hopefully) see the tests pass.
+
+Adding a New Micro Service
+--------------------------
+
+1. Add the service to [docker-compose.yml](https://github.com/nanit/api-gateway-example/blob/master/docker-compose.yml). Make sure the SERVICE_NAME environment variable is set properly, and that the gateway is linked to it.
+
+2. Add your service specs to [spec/app/spec/expected_routes.yml](https://github.com/nanit/api-gateway-example/blob/master/spec/app/spec/expected_routes.yml)
+
+3. Run `make test` in the root directory to see the specs fail.
+
+4. Add `app/services/new_service.conf` with the proper routing to your new service.
+
+5. Run `make test` in the root directory again and (hopefully again) see the
+   tests pass.
+
