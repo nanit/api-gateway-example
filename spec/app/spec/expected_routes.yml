@@ -1,0 +1,6 @@
+/login:
+  service: authentication
+  path: /login
+/messages:
+  service: inbox
+  path: /messages

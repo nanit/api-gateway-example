@@ -1,12 +1,10 @@
 require 'spec_helper'
+require 'yaml'
 
-EXPECTED_ROUTES = {
-  "/login"    => {service: "authentication", path: "/login"},
-  "/messages" => {service: "inbox",          path: "/messages"}
-}
+expected_routes = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'expected_routes.yml'))
 
-EXPECTED_ROUTES.each do |route, expected|
+expected_routes.each do |route, expected|
   RSpec.describe route do
-    it {is_expected.to route_to_service(expected[:service]).with_path(expected[:path])}
+    it {is_expected.to route_to_service(expected["service"]).with_path(expected["path"])}
   end
 end
