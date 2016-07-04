@@ -27,7 +27,7 @@ in the root folder.
 
 All tests should pass which means that:
 
-1. A request to http://api.mycompany.com/login is routed to the authentication service
+1. A request to http://your.gateway.com/login is routed to the authentication service
    with the /login path
-2. A request to http://api.mycompany.com/messages is routed to the inbox
+2. A request to http://your.gateway.com/messages is routed to the inbox
    service with the /messages path
