@@ -44,7 +44,7 @@ All tests should pass which means that:
 Adding a New Route
 ------------------
 
-1. Add the route to `spec/app/spec/expected_routes.yml`
+1. Add the route to [spec/app/spec/expected_routes.yml](https://github.com/nanit/api-gateway-example/blob/master/spec/app/spec/expected_routes.yml)
 
 2. Run `make test` in the root directory and see the tests fail.
 
