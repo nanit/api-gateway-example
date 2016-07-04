@@ -1,5 +1,5 @@
 test:
 	docker-compose kill
-	docker-compose build gateway testapp
+	docker-compose build
 	docker-compose up -d gateway
-	docker-compose run testapp rspec spec
+	docker-compose run tester rspec spec
