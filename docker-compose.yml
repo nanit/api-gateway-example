@@ -1,7 +1,11 @@
 authentication:
   build: spec/dummy_service
+  environment:
+    SERVICE_NAME: authentication
 inbox:
   build: spec/dummy_service
+  environment:
+    SERVICE_NAME: inbox
 
 gateway:
   build: app
