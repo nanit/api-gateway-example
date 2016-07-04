@@ -4,7 +4,7 @@ NGINX API Gateway
 This repo is an example of how to create an NGINX proxy as a gateway to your
 micro services.
 
-The beautiful thing is that you can run tests which verify that the gateway routing
+The important thing is that you can run tests to verify that the gateway routing
 is done correctly, meaning a request is routed to a specified service with a
 specified path.
 
@@ -26,6 +26,7 @@ $ make test
 in the root folder.
 
 All tests should pass which means that:
+
 1. A request to http://api.mycompany.com/login is routed to the authentication service
    with the /login path
 2. A request to http://api.mycompany.com/messages is routed to the inbox
